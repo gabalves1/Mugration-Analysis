@@ -1,0 +1,68 @@
+# Análise de Migração com Treetime Mugration
+
+Este pipeline detalha o processo de análise de migração utilizando o Treetime Mugration. São necessários dois arquivos iniciais: uma árvore em escala temporal e um arquivo de metadados em formato `.tsv`. O metadado deve conter duas colunas:
+
+- `name`: Nome ou identificador da sequência
+- `region`: Região associada à sequência
+
+## Passo a Passo
+
+1. **Rodando o Mugration**
+
+    Execute o comando abaixo para realizar a análise de migração com Treetime Mugration:
+
+    ```bash
+    treetime mugration --tree timeTree_final.nwk --states states.tsv --attribute region
+    ```
+
+    Após a execução, uma nova pasta chamada `ancestral_changes` será criada, contendo os resultados.
+
+2. **Contando Transições entre Regiões**
+
+    Dentro da pasta `ancestral_changes`, há dois scripts necessários para contabilizar o número de transições entre regiões na árvore e identificar o tempo em que ocorreram.
+
+    - No terminal do Linux com `python3` instalado, rode o comando:
+
+      ```bash
+      python3 AncestralChanges.py
+      ```
+
+    Este script gerará um arquivo `.csv` contendo as informações necessárias para a próxima etapa.
+
+3. **Conversão para Matriz**
+
+    O arquivo `.csv` gerado deve ser convertido para uma matriz, que servirá de input para a visualização.
+
+4. **Plotagem do Gráfico com RStudio**
+
+    Abra o RStudio e rode o script `Circus.R`, utilizando a matriz criada como input para gerar o gráfico de migração.
+
+## Exemplo de Estrutura do Metadata
+
+O arquivo `states.tsv` deve seguir o seguinte formato:
+
+```tsv
+name    region
+Sample1 Region1
+Sample2 Region2
+Sample3 Region1
+...
+```
+
+## Estrutura dos Arquivos
+
+```
+.
+├── timeTree_final.nwk
+├── states.tsv
+├── ancestral_changes
+│   ├── AncestralChanges.py
+│   ├── [outros arquivos necessários]
+└── Circus.R
+```
+
+## Notas
+
+- Certifique-se de que o `python3` esteja instalado no ambiente Linux.
+- Execute o processo na ordem descrita para garantir que o output final seja gerado corretamente.
+
