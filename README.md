@@ -1,6 +1,3 @@
-Para o README ficar com o layout e formatação corretos no GitHub, você pode adicionar detalhes de estrutura e marcar seções importantes em Markdown. Aqui está uma versão ajustada:
-
----
 
 # Análise de Migração com Treetime Mugration
 
