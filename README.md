@@ -22,9 +22,7 @@ Sample3 Region3
 ...
 ```
 
-
   > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços, sem caracteres especiais e acentuações.
-   > Para garantir que a coluna `region` esteja formatada corretamente, seguem alguns exemplos do que **não** deve conter:
 
 
 ## Passo a Passo
