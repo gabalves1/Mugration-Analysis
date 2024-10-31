@@ -10,7 +10,20 @@ Este pipeline descreve o processo de análise de migração utilizando o Treetim
    - `name`: Nome ou identificador da sequência
    - `region`: Região associada à sequência
 
-   > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços e sem caracteres especiais.
+
+   > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços, sem caracteres especiais e acentuações.
+   > Para garantir que a coluna `region` esteja formatada corretamente, seguem alguns exemplos do que **não** deve conter:
+
+1. **Exemplos:** 
+   - Errado: `América do Sul`
+   - Correto: `AmericadoSul`
+   - Errado: São Paulo
+   - Correto: SaoPaulo
+
+
+   - Correto: `SalvadorNorte` ou `salvadornorte`
+
+Essas correções garantem consistência na coluna `region`, facilitando análises e manipulações futuras.
 
 ## Exemplo de Formato do Arquivo de Metadados
 
@@ -41,6 +54,10 @@ treetime mugration --tree timetree.nwk --states states.tsv --attribute region
 
 ### 3. Contando Transições entre Regiões
 
+Antes de realizar esta etapa, será necessário fazer um ajuste manual no script AncestralChanges.py
+Na linha 12, deve inserir a data da sua sequência mais nova na árvore
+
+Feito isso, passar para próxima etapa:
 Na nova pasta criada, execute o seguinte comando no terminal (certifique-se de que `python3` está instalado):
 
 ```bash
