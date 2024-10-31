@@ -34,7 +34,7 @@ Para realizar a análise de migração, use o comando abaixo:
 treetime mugration --tree timeTree_final.nwk --states states.tsv --attribute region
 ```
 
-### 2. Preparando a Pasta de Scripts e Arquivo Anotado
+### 2. Preparando a Pasta de Scripts
 
 1. Após a execução do comando acima, entre na pasta de saída gerada pelo Mugration.
 2. Copie o arquivo `annotated_tree.nexus` para uma nova pasta que contenha os scripts `baltic.py` e `AncestralChanges.py`.
