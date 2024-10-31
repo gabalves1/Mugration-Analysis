@@ -4,7 +4,7 @@ Este pipeline descreve o processo de análise de migração utilizando o Treetim
 
 ## Arquivos Iniciais
 
-1. **Árvore em escala temporal** (`timeTree_final.nwk`)
+1. **Árvore em escala temporal** (`timetree.nwk`)
 2. **Arquivo de Metadados** (`states.tsv`) que deve conter as colunas:
 
    - `name`: Nome ou identificador da sequência
@@ -31,7 +31,7 @@ Sample3 Region3
 Para realizar a análise de migração, use o comando abaixo:
 
 ```bash
-treetime mugration --tree timeTree_final.nwk --states states.tsv --attribute region
+treetime mugration --tree timetree.nwk --states states.tsv --attribute region
 ```
 
 ### 2. Preparando a Pasta de Scripts
