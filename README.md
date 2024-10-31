@@ -10,18 +10,6 @@ Este pipeline descreve o processo de análise de migração utilizando o Treetim
    - `name`: Nome ou identificador da sequência
    - `region`: Região associada à sequência
 
-
-   > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços, sem caracteres especiais e acentuações.
-   > Para garantir que a coluna `region` esteja formatada corretamente, seguem alguns exemplos do que **não** deve conter:
-
- **Exemplos:** 
-   - Errado: `América do Sul`
-   - Correto: `AmericadoSul`
-   - Errado: São Paulo
-   - Correto: SaoPaulo
-
-Essas correções garantem consistência na coluna `region`, facilitando análises e manipulações futuras.
-
 ## Exemplo de Formato do Arquivo de Metadados
 
 O arquivo `states.tsv` deve estar formatado da seguinte forma:
@@ -33,6 +21,11 @@ Sample2 Region2
 Sample3 Region3
 ...
 ```
+
+
+  > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços, sem caracteres especiais e acentuações.
+   > Para garantir que a coluna `region` esteja formatada corretamente, seguem alguns exemplos do que **não** deve conter:
+
 
 ## Passo a Passo
 
