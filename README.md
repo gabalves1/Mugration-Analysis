@@ -1,5 +1,3 @@
-Aqui vai uma estrutura final para o pipeline de migração usando o Treetime Mugration, com formatação e explicações mais detalhadas:
-
 # Análise de Migração com Treetime Mugration
 
 Este pipeline descreve o processo de análise de migração utilizando o Treetime Mugration. Abaixo, encontram-se os arquivos e passos necessários para realizar a análise.
