@@ -14,7 +14,7 @@ theme_set(theme_cowplot())
 
 ##circos
 #file flow
-flowname <- read.delim("Flow_circosHIV3.txt", row.names=1)
+flowname <- read.delim("matriz.txt", row.names=1)
 
 flowname <- as.matrix(flowname)
 
