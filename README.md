@@ -53,7 +53,7 @@ Esse comando gerará um arquivo `.csv` com três colunas: `"Year"`, `"Origin"`, 
 
 1. O arquivo `.csv` gerado precisa ser convertido para uma matriz que servirá como input para a visualização dos dados no R.
 2. A estrutura da matriz deve seguir o exemplo disponível na pasta "inputfiles" , com as regiões dispostas nas linhas e colunas. Os valores da matriz correspondem à soma dos eventos de migração entre cada par de regiões (de uma região X para uma região Y).
-3. **Dica**: Para melhorar a visualização dos dados no gráfico, normalize os valores usando LOG10.
+3. **Sugestão**: Para melhorar a visualização dos dados no gráfico, normalize os valores usando LOG10.
 
 ### 5. Plotagem do Gráfico com RStudio
 
