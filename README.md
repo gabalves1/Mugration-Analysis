@@ -61,10 +61,9 @@ Esse comando gerará um arquivo `.csv` com três colunas: `"Year"`, `"Origin"`, 
 1. Abra o RStudio e carregue o script `circos.R`.
 2. Use a matriz como input para gerar o gráfico de migração.
 
-## Estrutura dos Arquivos
+## Resumo das etapas
 
 ```plaintext
-.
 ├── timeTree_final.nwk
 ├── states.tsv
 ├── novapasta
@@ -75,7 +74,6 @@ Esse comando gerará um arquivo `.csv` com três colunas: `"Year"`, `"Origin"`, 
 └── rstudio_files
     ├── circos.R
     └── matriz.txt
-
 ```
 
 ## Notas Adicionais
