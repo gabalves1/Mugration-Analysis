@@ -42,11 +42,11 @@ treetime mugration --tree timetree.nwk --states states.tsv --attribute region
 
 ### 3. Contando Transições entre Regiões
 
-Antes de realizar esta etapa, será necessário fazer um ajuste manual no script AncestralChanges.py
-Na linha 12, deve inserir a data da sua sequência mais nova na árvore
+1. Antes de realizar esta etapa, será necessário fazer um ajuste manual no script AncestralChanges.py
+2. Na linha 12, deve inserir a data da sua sequência mais nova na árvore
 
 Feito isso, passar para próxima etapa:
-Na nova pasta criada, execute o seguinte comando no terminal (certifique-se de que `python3` está instalado):
+3. Na nova pasta criada, execute o seguinte comando no terminal (certifique-se de que `python3` está instalado):
 
 ```bash
 python3 AncestralChanges.py
