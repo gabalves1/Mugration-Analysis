@@ -21,15 +21,15 @@ destinations = []
 for k in myTree.Objects: ## iterate over a flat list of branches
     
     "Assign node UNKNOWN region if not give"
-    if 'country' in k.traits:
-        region = k.traits['country']
+    if 'region' in k.traits:
+        region = k.traits['region']
     else:
         region = 'UNKNOWN'
-        k.traits['country'] = region 
+        k.traits['region'] = region 
     
     "Find parent region if given"
     if k.parent.traits:
-        parent_region = k.parent.traits['country']
+        parent_region = k.parent.traits['region']
     else:
         parent_region = 'UNKNOWN'
         
