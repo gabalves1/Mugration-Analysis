@@ -14,14 +14,11 @@ Este pipeline descreve o processo de análise de migração utilizando o Treetim
    > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços, sem caracteres especiais e acentuações.
    > Para garantir que a coluna `region` esteja formatada corretamente, seguem alguns exemplos do que **não** deve conter:
 
-1. **Exemplos:** 
+ **Exemplos:** 
    - Errado: `América do Sul`
    - Correto: `AmericadoSul`
    - Errado: São Paulo
    - Correto: SaoPaulo
-
-
-   - Correto: `SalvadorNorte` ou `salvadornorte`
 
 Essas correções garantem consistência na coluna `region`, facilitando análises e manipulações futuras.
 
