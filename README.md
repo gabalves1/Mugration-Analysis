@@ -46,6 +46,7 @@ treetime mugration --tree timetree.nwk --states states.tsv --attribute region
 2. Na linha 12, deve inserir a data da sua sequência mais nova na árvore
 
 Feito isso, passar para próxima etapa:
+
 3. Na nova pasta criada, execute o seguinte comando no terminal (certifique-se de que `python3` está instalado):
 
 ```bash
