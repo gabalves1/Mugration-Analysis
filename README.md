@@ -63,8 +63,6 @@ Esse comando gerará um arquivo `.csv` com três colunas: `"Year"`, `"Origin"`, 
 
 ## Estrutura dos Arquivos
 
-A estrutura final dos arquivos deve se parecer com a seguinte:
-
 ```plaintext
 .
 ├── timeTree_final.nwk
@@ -73,7 +71,11 @@ A estrutura final dos arquivos deve se parecer com a seguinte:
 │   ├── AncestralChanges.py
 │   ├── baltic.py
 │   ├── annotated_tree.nexus
-└── circos.R
+│   └── annotated_tree_events.csv
+└── rstudio_files
+    ├── circos.R
+    └── matriz.txt
+
 ```
 
 ## Notas Adicionais
