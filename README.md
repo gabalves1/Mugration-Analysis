@@ -1,18 +1,22 @@
+Aqui vai uma estrutura final para o pipeline de migração usando o Treetime Mugration, com formatação e explicações mais detalhadas:
+
 # Análise de Migração com Treetime Mugration
 
-Este pipeline detalha o processo de análise de migração utilizando o Treetime Mugration. São necessários dois arquivos iniciais:
+Este pipeline descreve o processo de análise de migração utilizando o Treetime Mugration. Abaixo, encontram-se os arquivos e passos necessários para realizar a análise.
 
-1. Uma árvore em escala temporal (`timeTree_final.nwk`)
-2. Um arquivo de metadados (`states.tsv`) com as colunas:
+## Arquivos Iniciais
+
+1. **Árvore em escala temporal** (`timeTree_final.nwk`)
+2. **Arquivo de Metadados** (`states.tsv`) que deve conter as colunas:
 
    - `name`: Nome ou identificador da sequência
    - `region`: Região associada à sequência
 
-> **Nota:** A coluna `region` deve ser formatada sem espaços e sem caracteres especiais.
+   > **Nota:** Certifique-se de que a coluna `region` está formatada sem espaços e sem caracteres especiais.
 
-## Exemplo de Formato do Metadata
+## Exemplo de Formato do Arquivo de Metadados
 
-O arquivo `states.tsv` deve seguir este formato:
+O arquivo `states.tsv` deve estar formatado da seguinte forma:
 
 ```tsv
 name    region
@@ -24,19 +28,22 @@ Sample3 Region3
 
 ## Passo a Passo
 
-### 1. Rodando o Mugration
+### 1. Executando o Mugration
 
-Execute o comando abaixo para realizar a análise de migração:
+Para realizar a análise de migração, use o comando abaixo:
 
 ```bash
 treetime mugration --tree timeTree_final.nwk --states states.tsv --attribute region
 ```
 
-Após a execução, entre na pasta de output gerada pelo Mugration e copie o arquivo `annotated_tree.nexus` para uma nova pasta que contenha os scripts `baltic.py` e `AncestralChanges.py`.
+### 2. Preparando a Pasta de Scripts e Arquivo Anotado
 
-### 2. Contando Transições entre Regiões
+1. Após a execução do comando acima, entre na pasta de saída gerada pelo Mugration.
+2. Copie o arquivo `annotated_tree.nexus` para uma nova pasta que contenha os scripts `baltic.py` e `AncestralChanges.py`.
 
-Na nova pasta criada, execute o seguinte comando no terminal Linux, assumindo que `python3` está instalado:
+### 3. Contando Transições entre Regiões
+
+Na nova pasta criada, execute o seguinte comando no terminal (certifique-se de que `python3` está instalado):
 
 ```bash
 python3 AncestralChanges.py
@@ -44,15 +51,20 @@ python3 AncestralChanges.py
 
 Esse comando gerará um arquivo `.csv` com três colunas: `"Year"`, `"Origin"`, e `"Destination"`.
 
-### 3. Conversão para Matriz
+### 4. Conversão para Matriz
 
-O arquivo `.csv` gerado precisa ser convertido para uma matriz, que servirá de input para a visualização dos dados no R.
+1. O arquivo `.csv` gerado precisa ser convertido para uma matriz que servirá como input para a visualização dos dados no R.
+2. A estrutura da matriz deve seguir o exemplo disponível na pasta "inputfiles" , com as regiões dispostas nas linhas e colunas. Os valores da matriz correspondem à soma dos eventos de migração entre cada par de regiões (de uma região X para uma região Y).
+3. **Dica**: Para melhorar a visualização dos dados no gráfico, normalize os valores usando LOG10.
 
-### 4. Plotagem do Gráfico com RStudio
+### 5. Plotagem do Gráfico com RStudio
 
-No RStudio, rode o script `Circus.R`, usando a matriz como input para gerar o gráfico de migração.
+1. Abra o RStudio e carregue o script `circos.R`.
+2. Use a matriz como input para gerar o gráfico de migração.
 
 ## Estrutura dos Arquivos
+
+A estrutura final dos arquivos deve se parecer com a seguinte:
 
 ```plaintext
 .
@@ -62,9 +74,9 @@ No RStudio, rode o script `Circus.R`, usando a matriz como input para gerar o gr
 │   ├── AncestralChanges.py
 │   ├── baltic.py
 │   ├── annotated_tree.nexus
-└── Circus.R
+└── circos.R
 ```
 
-## Notas
+## Notas Adicionais
 
-- **Requisitos**: Certifique-se de que o `python3` esteja instalado no sistema.
+- **Pré-requisitos**: Certifique-se de que `python3` e os pacotes necessários no R estão instalados.
